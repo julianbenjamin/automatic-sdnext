@@ -51,7 +51,7 @@ CMD ["python", "launch.py", "--debug", "--skip-all", "--listen", "--quick", "--a
 EXPOSE 7860
 
 # healthcheck function
-# HEALTHCHECK --interval=60s --timeout=10s --start-period=60s --retries=3 CMD curl --fail http://localhost:7860/sdapi/v1/status || exit 1
+HEALTHCHECK --interval=60s --timeout=10s --start-period=60s --retries=3 CMD curl --fail http://localhost:7860/sdapi/v1/status || exit 1
 
 # stop signal
 STOPSIGNAL SIGINT
